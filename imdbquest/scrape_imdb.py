@@ -17,7 +17,7 @@ def scrape_awards(movie_id: str) -> int:
             if award.text == "\nWinner\nOscar\n":
                 result = award.get('rowspan')
     else:
-        print(f"Cannot access movie's award webpage. Url: {url}")
+        print(f"Cannot access movie's award webpage. Url: {url}, status code: {response.status_code}")
         sys.exit(1)
 
     return int(result)
@@ -54,7 +54,7 @@ def scrape_top_movies(movies_count : int =20) -> pd.DataFrame:
                     'oscars_count': oscars_count}
             movies.append(data)
     else:
-        print(f"Cannot access IMDB webpage. Url: {url}")
+        print(f"Cannot access IMDB webpage. Url: {url}, status code: {response.status_code}")
         sys.exit(1)
 
     df_movies = cast_df(pd.DataFrame(movies))
