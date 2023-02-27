@@ -23,7 +23,7 @@ class TestScrapeIMDB(unittest.TestCase):
         self.assertEqual(cm.exception.code, 1)
 
     def test_cast_df(self):
-        """Test DataFrame cast function"""
+        """Test cast_df function"""
         df_before = pd.DataFrame({'title': "test", 'rating': "9.2",'ratings_count': 2707286.0, "oscars_count": "0"}, index=[0])
         df_after = pd.DataFrame({'title': "test", 'rating': 9.2,'ratings_count': 2707286, "oscars_count": 0}, index=[0])
         df_real = scrape_imdb.cast_df(df_before)
@@ -33,7 +33,8 @@ class TestScrapeIMDB(unittest.TestCase):
         """Test whether the final DataFrame correct"""
         df_expected = pd.DataFrame({'title': "The Shawshank Redemption", 'rating': 9.2,'ratings_count': 2707286, "oscars_count": 0}, index=[0])
         df_real = scrape_imdb.scrape_top_movies(movies_count = 1)
-        assert_frame_equal(df_expected, df_real)
+        # 10 percent relative tolerance - number of votes updates frequently
+        assert_frame_equal(df_expected, df_real,rtol=0.1)
 
 if __name__ == '__main__':
     unittest.main()
