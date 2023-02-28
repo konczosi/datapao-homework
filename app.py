@@ -39,7 +39,13 @@ def main():
         os.makedirs(dir_name)
         df.to_csv(
             f"{dir_name}movies.csv",
-            columns = ["title","adjusted_rating","rating","ratings_count", "oscars_count"],
+            columns=[
+                "title",
+                "adjusted_rating",
+                "rating",
+                "ratings_count",
+                "oscars_count",
+            ],
             sep=",",
             float_format="%.1f",
             index=False,
@@ -48,7 +54,13 @@ def main():
     else:
         df.to_csv(
             f"{dir_name}movies.csv",
-            columns = ["title","adjusted_rating","rating","ratings_count", "oscars_count"],
+            columns=[
+                "title",
+                "adjusted_rating",
+                "rating",
+                "ratings_count",
+                "oscars_count",
+            ],
             sep=",",
             float_format="%.1f",
             index=False,
