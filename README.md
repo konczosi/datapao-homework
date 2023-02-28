@@ -31,4 +31,4 @@ Finally, the data is saved with the adjusted ratings in a movies.csv file.
 - Use Docker to containerize the application.
 - Benchmark and speed up the function that scrapes the number of Oscar awards.
 ## License 
-- [MIT](requirements.txt)
+- [MIT](LICENSE.md)
