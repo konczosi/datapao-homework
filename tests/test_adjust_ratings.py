@@ -1,8 +1,8 @@
 import unittest
 from imdbquest import adjust_ratings
 
-class TestAdjustRatings(unittest.TestCase):
 
+class TestAdjustRatings(unittest.TestCase):
     def test_oscar_calculator(self):
         """Test oscar_calculator function"""
         self.assertEqual(adjust_ratings.oscar_calculator(0), 0)
@@ -20,8 +20,8 @@ class TestAdjustRatings(unittest.TestCase):
         """Test review_penalizer function"""
         self.assertEqual(adjust_ratings.review_penalizer(100_000, 0), 0.1)
         self.assertEqual(adjust_ratings.review_penalizer(99_999, 0), 0)
-        self.assertEqual(adjust_ratings.review_penalizer(1000_001,1), 1.0)
+        self.assertEqual(adjust_ratings.review_penalizer(1000_001, 1), 1.0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

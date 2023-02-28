@@ -11,6 +11,7 @@ def oscar_calculator(oscars_count: int) -> float:
         rating_adjustment = 1.5
     return rating_adjustment
 
+
 def review_penalizer(review_max: int, review_count: int) -> float:
     """Adjust movie ratings based on number of reviews"""
     rating_adjustment = 0
