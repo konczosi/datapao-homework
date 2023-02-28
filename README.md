@@ -10,11 +10,15 @@ Finally, the data is saved with the adjusted ratings in a movies.csv file.
     ```bash
     git clone https://github.com/konczosi/datapao-homework.git
     ```
-2. Create a virtual Python environment (e.g. with venv):
+2. Create a virtual Python environment in the repo (e.g. with venv):
     ```bash
     python3 -m venv venv
     ```
-3. Install the required packages with pip:
+3. Activate the virtual environment
+    ```bash
+    source venv/bin/activate
+    ```
+4. Install the required packages with pip:
    ```bash
    python -m pip install -r requirements.txt
    ```
